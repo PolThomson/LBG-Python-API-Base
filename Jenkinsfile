@@ -24,7 +24,7 @@ pipeline {
                 export VERSION=${BUILD_NUMBER}
                 docker stop lbg-api && echo "stopped" || echo "not running"
                 docker rm lbg-api && echo "removed" || echo "already removed"
-                docker run -d -p 80:${PORT} -e PORT=${PORT} polthomson/lbg:${VERSION}
+                docker run -d -p 80:${PORT} -e PORT=${PORT} --name lbg-api polthomson/lbg:2
                 '''
             }
         }
