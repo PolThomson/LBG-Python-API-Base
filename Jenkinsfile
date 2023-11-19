@@ -19,7 +19,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                ssh jenkins@polthomson-deploy <<EOF
+                ssh jenkins@pault-deploy <<EOF
                 export PORT=${PORT}
                 export VERSION=${BUILD_NUMBER}
                 docker stop lbg-api && echo "stopped" || echo "not running"
